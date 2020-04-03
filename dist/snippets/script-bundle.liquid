@@ -1,0 +1,7 @@
+{% capture layout_bundle_js %}bundle.{{- layout -}}.js{% endcapture %}
+{{ layout_bundle_js | asset_url | script_tag }}
+
+{% if template %}
+  {% capture script_bundle %}bundle.{{- template | remove: 'customers/' -}}.js{% endcapture %}
+  {{ script_bundle | asset_url | script_tag }}
+{% endif %}

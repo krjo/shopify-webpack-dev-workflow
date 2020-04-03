@@ -1,0 +1,7 @@
+{% capture layout_bundle_styles %}bundle.{{- layout -}}.css{% endcapture %}
+{{ layout_bundle_styles | asset_url | stylesheet_tag }}
+
+{% if template %}
+  {% capture style_bundle %}bundle.{{- template | remove: 'customers/' -}}.css{% endcapture %}
+  {{ style_bundle | asset_url | stylesheet_tag }}
+{% endif %}

@@ -1,0 +1,7 @@
+development:
+  password: <PASSWORD>
+  theme_id: "<THEME_ID>"
+  store: <STORE_URL>
+  directory: dist/
+  ignore_files:
+    - config/settings_data.json

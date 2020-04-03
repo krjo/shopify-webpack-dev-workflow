@@ -1,0 +1,50 @@
+{
+  "name": "pura-vida-shopify-theme-development",
+  "version": "1.0.0",
+  "description": "An empty starting point for modern Shopify theme development.",
+  "private": true,
+  "main": "webpack.config.js",
+  "scripts": {
+    "start": "NODE_ENV=development webpack --watch",
+    "build": "webpack",
+    "deploy": "webpack && shopify-themekit deploy",
+    "eslint": "eslint \"src/js/**\"",
+    "add-all": "git add ."
+  },
+  "keywords": [],
+  "author": "@kjdointhings",
+  "license": "ISC",
+  "dependencies": {
+    "infinite-scroll": "^3.0.6",
+    "js-cookie": "^2.2.1",
+    "moment-mini": "^2.22.1",
+    "tiny-slider": "^2.9.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "@shopify/theme-cart": "^3.0.3",
+    "@shopify/theme-product": "^3.0.3",
+    "@shopify/theme-product-form": "^3.0.3",
+    "@shopify/themekit": "^1.1.3",
+    "autoprefixer": "^9.7.4",
+    "babel-loader": "^8.0.6",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.4.2",
+    "eslint": "^6.8.0",
+    "glob": "^7.1.6",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.1",
+    "postcss-loader": "^3.0.0",
+    "pre-commit": "^1.2.2",
+    "sass-loader": "^8.0.2",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-shell-plugin-next": "^1.1.5"
+  },
+  "pre-commit": [
+    "build",
+    "add-all"
+  ]
+}

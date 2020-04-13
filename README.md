@@ -57,7 +57,7 @@ Webpack will generate a JavaScript file for each template and layout file in the
 ### Theme Kit
 
 #### Config
-The Theme Kit configuration file uses `dist` as the root directory.
+The Theme Kit configuration file uses `dist` as the root directory for watching files to upload.
 
 #### File Uploads
 When running `npm start`, Webpack will use a plugin that runs `shopify-themekit watch` after a successful build. Webpack will then be set to watch and recompile file changes, and Theme Kit will watch for file changes in the `dist` directory.
@@ -67,7 +67,7 @@ When running `npm start`, Webpack will use a plugin that runs `shopify-themekit 
 - The `style-bundle.liquid` and `script-bundle.liquid` snippets output dynamic asset URLs based on current layout and template. These have been added to sample `theme.liquid`. The `layout` variable is required.
 
 #### Shopify Plus Stores
-If your store is on Shopify Plus, you'll to do the following:
+If your store is on Shopify Plus, you'll need to do the following:
 - Create `checkout.scss` and add to `src/styles/layout/`.
 - Create `checkout.js` and add to `src/js/bundles/layout/`.
 - Add `import "Styles/layout/checkout.scss";` to `checkout.js`.

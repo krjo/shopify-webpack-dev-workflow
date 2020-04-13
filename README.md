@@ -1,15 +1,16 @@
 # 📦 Webpack Shopify Theme Development Tool
 
-**This Webpack config was created to replace Slate by Shopify. This workflow functions similiarly to Theme Kit but offers you the ability to use modern JavaScript and create template specific JS and CSS bundles. While it's possible to migrate an existing theme to this workflow, the intention and real benefit comes when new stores are built from scratch using this setup.**
+**This Webpack config was created to replace Slate by Shopify. This workflow functions similiarly to Theme Kit but offers you the ability to use modern JavaScript and create template specific JS and CSS bundles. While it's possible to migrate an existing theme to this workflow, the intention and real benefit comes when new themes are built from scratch using this setup.**
 
 ## 🖥 System Requirements
-- [Node](https://nodejs.org/en/) (Latest release)
+- [Node](https://nodejs.org/en/) (v10.16.3+)
 - [NPM 5+](https://docs.npmjs.com/try-the-latest-stable-version-of-npm)
 - [Theme Kit](https://shopify.github.io/themekit/)
 
 ## 🎬 Getting Started
-1. Download this repo and run `npm install` to install all node packages.
-2. In a new directory, run [Theme Kit's 'new' command to generate a new theme on your store](https://shopify.github.io/themekit/commands/#new). After that theme has been uploaded to your store, delete the local theme files that are downloaded to your computer as you won't need them. The starter liquid files included in this repo are the same files you'll get when generating a new theme with Theme Kit.
+1. Download and unzip this repo, rename the directory to your project.
+2. Open in terminal and and run `npm install` to install all node modules.
+2. In a separate new directory, run [Theme Kit's 'new' command to generate a new theme on your store](https://shopify.github.io/themekit/commands/#new). After that theme has been uploaded to your store, delete the new folder containing the local theme files Theme Kit downloaded to your computer as you won't need them. The starter liquid files included `dist/` are the same files you'll get when generating a new theme with Theme Kit.
 3. In Shopify, copy the theme ID for the new theme, then update the `<PASSWORD>`, `THEME_ID`, and `STORE_URL` in **config.yml** with your store & theme details.
 4. Your `config.yml` file should look like this: 
     ```

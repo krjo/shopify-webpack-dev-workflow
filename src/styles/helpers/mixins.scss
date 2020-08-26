@@ -1,5 +1,6 @@
 /* SCSS Mixins */
 
+// Usage: @include mq($large) { ... }
 @mixin mq($value, $direction: 'min') {
   @if type-of($value) == number and unitless($value) {
     $value: $value + "px";

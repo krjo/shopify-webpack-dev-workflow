@@ -1,0 +1,19 @@
+/* SCSS Mixins */
+
+@mixin mq($value, $direction: 'min') {
+  @if type-of($value) == number and unitless($value) {
+    $value: $value + "px";
+  }
+
+  @if type-of($value) == string {
+    @each $breakpoint in $breakpoints {
+      @if index($breakpoint, $value) != null {
+        $value: nth($breakpoint, 1);
+      }
+    }
+  }
+
+  @media only screen and (#{$direction}-width: #{$value}) {
+    @content;
+  }
+}

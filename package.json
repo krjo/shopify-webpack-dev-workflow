@@ -8,18 +8,11 @@
     "start": "NODE_ENV=development webpack --watch",
     "build": "webpack",
     "deploy": "webpack && shopify-themekit deploy",
-    "eslint": "eslint \"src/js/**\"",
     "add-all": "git add ."
   },
   "keywords": [],
-  "author": "@kjdointhings",
+  "author": "@krjo",
   "license": "ISC",
-  "dependencies": {
-    "infinite-scroll": "^3.0.6",
-    "js-cookie": "^2.2.1",
-    "moment-mini": "^2.22.1",
-    "tiny-slider": "^2.9.2"
-  },
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/plugin-transform-runtime": "^7.12.10",
@@ -33,7 +26,6 @@
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^5.1.2",
     "css-loader": "^3.6.0",
-    "eslint": "^6.8.0",
     "glob": "^7.1.6",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.14.1",

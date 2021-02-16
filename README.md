@@ -1,6 +1,6 @@
 # 📦 Webpack Shopify Theme Development Tool
 
-**This Webpack config was created to replace Slate by Shopify. This workflow functions similiarly to Theme Kit but offers you the ability to use modern JavaScript and create template specific JS and CSS bundles. While it's possible to migrate an existing theme to this workflow, the intention and real benefit comes when new themes are built from scratch using this setup.**
+**This Webpack config was created to replace Slate by Shopify. This workflow uses ThemeKit but offers you the ability to use modern JavaScript and create template specific JS and CSS bundles. While it's possible to migrate an existing theme to this workflow, the intention and real benefit comes when new themes are built from scratch using this setup. Please post general questions in the Discussions tab in GitHub.**
 
 ## 🖥 System Requirements
 - [Node](https://nodejs.org/en/) (v10.16.3+)
@@ -100,3 +100,9 @@ Since this is not currently an NPM package, I'll be posting updates here that wi
 #### March 23, 2020
 - Moves `templates/`, `sections/`, `snippets/` and `layout/` directories into a `liquid/` directory in `src/`.
 - Updates copy plugin in `webpack.config.js` to accommodate the new liquid directory structure.
+
+#### February 16, 2021
+- Adds apps.js and apps.scss. These assets will load in your theme layout JS and CSS on pages where apps run and a Shopify template is not used. (ie. ___.myshopify.com/apps/store-locator)
+- Updates style-bundle.liquid and script-bundle.liquid to include app.js and app.scss for template-less pages
+- Updates style-bundle.liquid and script-bundle.liquid to remove string filter for capturing template name and suffix
+- Uninstalls unnecessary npm dependencies

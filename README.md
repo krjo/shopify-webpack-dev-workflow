@@ -43,9 +43,6 @@
 - Completes a Webpack build in **production** mode
 - Deploys and overwrites all theme files via Theme Kit
 
-`npm run eslint`
-- Lint all JavaScript files in `src/js`
-
 ### Webpack
 
 #### Entry Points
@@ -60,7 +57,7 @@ Webpack will generate a JavaScript file for each template and layout file in the
 The Theme Kit configuration file uses `dist` as the root directory for watching files to upload.
 
 #### File Uploads
-When running `npm start`, Webpack will use a plugin that runs `shopify-themekit watch` after a successful build. Webpack will then be set to watch and recompile file changes, and Theme Kit will watch for file changes in the `dist` directory.
+When running `npm start`, Webpack will use a plugin that runs `shopify-themekit watch` after a successful build. Webpack will then watch and recompile entry file changes, and Theme Kit will watch for file changes in the `dist` directory.
 
 ## ‼️ Required Files
 - The layout and template entry files in `src/js/bundles/` are necessary for Webpack to generate the CSS and JavaScript assets for each layout and template. Additional entry files will be required when creating new liquid templates or alternate templates, ie. `page.about.js`.
@@ -70,8 +67,8 @@ When running `npm start`, Webpack will use a plugin that runs `shopify-themekit 
 If your store is on Shopify Plus, you'll need to do the following:
 - Create `checkout.scss` and add to `src/styles/layout/`.
 - Create `checkout.js` and add to `src/js/bundles/layout/`.
-- Add `import "Styles/layout/checkout.scss";` to `checkout.js`.
-- Render these snippets in `checkout.liquid` by changing the snippet's layout variable to `checkout`. ie. `{% render 'style-bundle', layout: 'checkout' %}` and `{% render 'script-bundle', layout: 'checkout' %}`.
+- Add `import "Styles/layout/checkout.scss";` in `checkout.js`.
+- Render the style-bundle and script-bundle snippets in `checkout.liquid` by changing the snippet's layout variable value to `checkout`. ie. `{% render 'style-bundle', layout: 'checkout' %}` and `{% render 'script-bundle', layout: 'checkout' %}`.
 
 ## 📝 Notes
 - Subdirectories are allowed in `assets/`, `js/`, `styles/`, `snippets/`.
@@ -80,7 +77,7 @@ If your store is on Shopify Plus, you'll need to do the following:
 - If you add a new JavaScript entry file to `js/bundles/` while Webpack and Theme Kit are watching for changes, you'll need to end the process and run `npm start` again so that Webpack is aware of the new entry file.
 - A git pre-commit hook is installed that will run `webpack build` prior to the commit. This is useful if using a code deployment tool so that you never push and deploy an unbuilt theme.
 - `clean-webpack-plugin` was intentionally not included to make incremental deployments faster using [Buddy](https://buddy.works/). If you remove a bundle entry file, you'll also need to delete the bundle files from `dist/assets`.
-- If you update or switch node versions using `nvm`, you may need to run `npm rebuild node-sass` to refresh node-sass for your current environment.
+- If you update or switch node versions using `nvm`, you will need to run `npm rebuild node-sass` to refresh node-sass for your current environment.
 - When merging 2 git feature branches, you only need to resolve the conlficts inside `src/`. Any conflicts inside `dist/` can be resolved with `npm run build`. Always run `npm run build` after resolving merge conflicts.
 
 ## 🚧 Under Construction
@@ -89,7 +86,6 @@ A few issues with this workflow that I'm working on a solution for:
 - Currently, if the same vendor module is imported in a layout and template entry file, that code will be included twice. How to split out vendor file imports but also make them available in the necessary modules.
 
 ## 🆕 Changelog
-Since this is not currently an NPM package, I'll be posting updates here that will need to be done manually.
 
 #### March 2, 2020
 - Adds `@babel/plugin-transform-runtime` dev dependency, and adds `"plugins": ["@babel/plugin-transform-runtime"]` to `.babelrc`.

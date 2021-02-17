@@ -7,7 +7,7 @@
   "scripts": {
     "start": "NODE_ENV=development webpack --watch",
     "build": "webpack",
-    "deploy": "webpack && shopify-themekit deploy",
+    "deploy": "webpack && theme deploy",
     "add-all": "git add ."
   },
   "keywords": [],
@@ -21,7 +21,6 @@
     "@shopify/theme-cart": "^3.1.0",
     "@shopify/theme-product": "^3.1.0",
     "@shopify/theme-product-form": "^3.1.0",
-    "@shopify/themekit": "^1.1.7",
     "autoprefixer": "^9.8.6",
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^5.1.2",

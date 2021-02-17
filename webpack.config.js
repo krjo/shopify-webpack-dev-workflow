@@ -98,7 +98,7 @@ if (mode === 'development') {
         scripts: ['echo Webpack build in progress...🛠'],
       }, 
       onBuildEnd:{
-        scripts: ['echo Build Complete 📦','shopify-themekit watch','shopify-themekit open'],
+        scripts: ['echo Build Complete 📦','theme watch','theme open'],
         parallel: true
       }
     })

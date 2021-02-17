@@ -12,7 +12,7 @@
   },
   "keywords": [],
   "author": "@krjo",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/plugin-transform-runtime": "^7.12.10",

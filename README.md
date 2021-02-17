@@ -41,7 +41,7 @@
 
 `npm run deploy`
 - Completes a Webpack build in **production** mode
-- Deploys and overwrites all theme files via Theme Kit
+- Deploys dist folder to the **development** theme in `config.yml`
 
 ### Webpack
 

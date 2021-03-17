@@ -79,6 +79,7 @@ If your store is on Shopify Plus, you'll need to do the following:
 - `clean-webpack-plugin` was intentionally not included to make incremental deployments faster using [Buddy](https://buddy.works/). If you remove a bundle entry file, you'll also need to delete the bundle files from `dist/assets`.
 - If you update or switch node versions using `nvm`, you will need to run `npm rebuild node-sass` to refresh node-sass for your current environment.
 - When merging 2 git feature branches, you only need to resolve the conlficts inside `src/`. Any conflicts inside `dist/` can be resolved with `npm run build`. Always run `npm run build` after resolving merge conflicts.
+- Vendor CSS and JS files can be added to `src/assets/vendor`, and will be copied into `dist/assets`.
 
 ## 🚧 Under Construction
 A few issues with this workflow that I'm working on a solution for:

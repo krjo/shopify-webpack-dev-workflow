@@ -1,0 +1,1 @@
+// Example vendor script file

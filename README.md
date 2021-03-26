@@ -3,14 +3,14 @@
 **This Webpack config was created to replace Slate by Shopify. This workflow uses ThemeKit but offers you the ability to use modern JavaScript and create template specific JS and CSS bundles. While it's possible to migrate an existing theme to this workflow, the intention and real benefit comes when new themes are built from scratch using this setup. Please post general questions in the Discussions tab in GitHub.**
 
 ## 🖥 System Requirements
-- [Node](https://nodejs.org/en/) (v10.16.3+)
+- [Node](https://nodejs.org/en/) (v14.*+)
 - [NPM 5+](https://docs.npmjs.com/try-the-latest-stable-version-of-npm)
 - [Theme Kit](https://shopify.github.io/themekit/)
 
 ## 🎬 Getting Started
-1. Download and unzip this repo, rename the directory to your project.
-2. Open in terminal and and run `npm install` to install all node modules.
-2. In a separate new directory, run [Theme Kit's 'new' command to generate a new theme on your store](https://shopify.github.io/themekit/commands/#new). After that theme has been uploaded to your store, delete the new folder containing the local theme files Theme Kit downloaded to your computer as you won't need them. The starter liquid files included `dist/` are the same files you'll get when generating a new theme with Theme Kit.
+1. In a new project directory, run [Theme Kit's 'new' command to generate a new theme on your store](https://shopify.github.io/themekit/commands/#new). After that theme has been uploaded to your store, delete the new local theme files that Theme Kit downloaded to your directory as you won't need them. The starter liquid files included `dist/` are the same files you'll get when generating a new theme with Theme Kit.
+2. Download and unzip this repo, and move all files into your new directory created in step 1.
+3. Open terminal, cd into your project directory, and and run `npm install` to install packages.
 3. In Shopify, copy the theme ID for the new theme, then update the `<PASSWORD>`, `THEME_ID`, and `STORE_URL` in **config.yml** with your store & theme details.
 4. Your `config.yml` file should look like this: 
     ```
@@ -22,7 +22,7 @@
       ignore_files:
         - config/settings_data.json
     ```
-5. If migrating an existing theme, copy over all assets, liquid and config files from your theme.
+5. If migrating an existing theme, copy over all assets, liquid and config files from your theme into their respective directories in **src/**.
 6. Run `npm start` to run your first Webpack build and start watching for file changes to be uploaded to Shopify.
 
 ## ⚙️ Configuration

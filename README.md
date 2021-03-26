@@ -22,7 +22,7 @@
       ignore_files:
         - config/settings_data.json
     ```
-5. If migrating an existing theme, copy over all assets, liquid and config files from your theme into their respective directories in **src/**.
+5. If migrating an existing theme, copy over all assets, liquid and config files from your theme into their respective directories in `src/`.
 6. Run `npm start` to run your first Webpack build and start watching for file changes to be uploaded to Shopify.
 
 ## ⚙️ Configuration

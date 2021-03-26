@@ -1,0 +1,1 @@
+import "Styles/templates/customers/register.scss";

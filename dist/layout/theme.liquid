@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="{{ shop.locale }}">
 <head>
   <title>{{ page_title }}</title>
   <meta charset="utf-8">
@@ -11,16 +11,18 @@
   {% render 'style-bundle', layout: 'theme' %}
   
   {{ content_for_header }}
+
 </head>
 <body>
 
+  <a href="#main" class="sr-only">Skip to content</a>
+
   {% for link in linklists.main-menu.links %}
-    {% assign child_list_handle = link.title | handleize %}
-    {% if linklists[child_list_handle].links != blank %}
+    {% if link.links != blank %}
       <a href="{{ link.url }}">{{ link.title }}</a>
-      [{% for childlink in linklists[child_list_handle].links %}
+      {% for childlink in link.links %}
         <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
-      {% endfor %}]
+      {% endfor %}
     {% else %}
       <a href="{{ link.url }}">{{ link.title }}</a>
     {% endif %}
@@ -38,7 +40,7 @@
     {% endif %}
   {% endif %}
 
-  <main role="main">
+  <main role="main" id="main">
     {{ content_for_layout }}
   </main>
 

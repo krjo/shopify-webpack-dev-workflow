@@ -6,6 +6,7 @@ const WebpackShellPluginNext = require('webpack-shell-plugin-next');
 const mode = process.env.NODE_ENV === 'development' ? 'development' : 'production';
 const devtool = mode === 'development' ? 'eval-cheap-source-map' : 'none';
 const stats = mode === 'development' ? 'errors-warnings' : { children: false };
+const sass = require('node-sass');
 
 module.exports = {
   mode: mode,
@@ -54,7 +55,18 @@ module.exports = {
         from: 'src/assets/**/*',
         to: 'assets/',
         flatten: true
-      }
+      },
+      {
+				from: 'src/styles/sections/**/*',
+				to: 'assets/section.[name].css',
+				flatten: true,
+				transform(content, path) {
+					const result = sass.renderSync({
+						file: path,
+					});
+					return result.css.toString();
+				},
+			}
     ])
   ],
   stats: stats,

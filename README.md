@@ -2,6 +2,13 @@
 
 **This Webpack config was created to replace Slate by Shopify. This workflow uses ThemeKit but offers you the ability to use modern JavaScript and create template specific JS and CSS bundles. While it's possible to migrate an existing theme to this workflow, the intention and real benefit comes when new themes are built from scratch using this setup. Please post general questions in the Discussions tab in GitHub.**
 
+## 🆕 Updated to work with Shopify's Online Store 2.0 JSON templates & "sections everywhere"
+
+### New features:
+- All .scss files created under `src/styles/sections/` will be processed with `node-sass` and compiled to a .css file with a `section.` prefix (See example files in `dist`). These files will be bundled into `dist/assets`.
+- Note: Shopify's preferred method of including section file css is to add a liquid stylesheet tag at the top fo each section file. See example section file (Approach taken from the new Dawn theme).
+- JSON templates will now be ignored by ThemeKit via the config.yml file. This is due to the fact that section setting content is stored within the template.json file. Allowing ThemeKit to push new versions of this file would overwrite any changes made in section settings from the theme customizer. If you use a deployment tool like Buddy or Beanstalk, be sure to add `templates/*.json` as an ignore there as well.
+
 ## 🖥 System Requirements
 - [Node](https://nodejs.org/en/) (v14.*+)
 - [NPM 5+](https://docs.npmjs.com/try-the-latest-stable-version-of-npm)

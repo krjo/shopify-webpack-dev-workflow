@@ -1,1 +1,24 @@
-{% comment %} Just an example Liquid section file {% endcomment %}
+{% comment %} EXAMPLE SECTION FILE {% endcomment %}
+{{ 'section.example-section-styles.css' | asset_url | stylesheet_tag }}
+
+<section>
+  {{ section.settings.title }}
+</section>
+
+{% schema %}
+  { 
+    "name": "Sample Section",
+    "presets": [
+      {
+        "name": "Example Section"
+      }
+    ],
+    "settings": [ 
+      { 
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "example": {
+      "type": "example-section"
+    }
+  },
+  "order": [
+    "example"
+  ]
+}

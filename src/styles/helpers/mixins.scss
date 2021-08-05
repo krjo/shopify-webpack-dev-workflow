@@ -6,6 +6,10 @@
     $value: $value + "px";
   }
 
+  @if $direction == 'max' {
+    $value: $value - 1;
+  }
+
   @if type-of($value) == string {
     @each $breakpoint in $breakpoints {
       @if index($breakpoint, $value) != null {

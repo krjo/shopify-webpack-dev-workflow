@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const WebpackShellPluginNext = require('webpack-shell-plugin-next');
 const mode = process.env.NODE_ENV === 'development' ? 'development' : 'production';
-const devtool = mode === 'development' ? 'eval-cheap-source-map' : 'none';
+const devtool = mode === 'development' ? 'eval-cheap-source-map' : false;
 const stats = mode === 'development' ? 'errors-warnings' : { children: false };
 const sass = require('node-sass');
 
@@ -73,13 +73,15 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['@babel/env'],
-        }
-      },
+				test: /\.js$/,
+				exclude: /node_modules/,
+				use: {
+					loader: 'babel-loader',
+					options: {
+						presets: ['@babel/env'],
+					},
+				},
+			},
       {
         test: /\.(sc|sa|c)ss$/,
         use: [

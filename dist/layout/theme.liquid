@@ -9,6 +9,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
 
   {% render 'style-bundle', layout: 'theme' %}
+  {% render 'script-bundle', layout: 'theme' %}
   
   {{ content_for_header }}
 
@@ -43,8 +44,6 @@
   <main role="main" id="main">
     {{ content_for_layout }}
   </main>
-
-  {% render 'script-bundle', layout: 'theme' %}
 
 </body>
 </html>

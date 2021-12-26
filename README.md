@@ -95,8 +95,9 @@ A few issues with this workflow that I'm working on a solution for:
 
 ## 🆕 Changelog
 
-#### March 2, 2020
-- Adds `@babel/plugin-transform-runtime` dev dependency, and adds `"plugins": ["@babel/plugin-transform-runtime"]` to `.babelrc`.
+#### December 26, 2021
+- Removes Babel. Replaces with `eslint-plugin-compat` & `.eslintrc` (only polyfill what is necessary for the browsers your project requires).
+- Adds `defer` to layout and template script bundles, and moves to `<head>`.
 
 #### March 10, 2020
 - Fixes bug with account page style and JavaScript bundles. Updates the `style-bundle.liquid` and `script-bundle.liquid` snippets to remove `customers/` from the asset URL output as this is not included in the filename that webpack generates.

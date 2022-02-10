@@ -23,7 +23,7 @@
     "eslint-plugin-compat": "^4.0.0",
     "glob": "^7.1.6",
     "mini-css-extract-plugin": "^1.5.0",
-    "node-sass": "^5.0.0",
+    "node-sass": "^7.0.0",
     "postcss-loader": "^5.2.0",
     "pre-commit": "^1.2.2",
     "sass-loader": "^11.0.1",
